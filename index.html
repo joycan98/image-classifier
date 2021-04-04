@@ -18,12 +18,12 @@
 
   <script>
     var loadFile = function(event) {
-    var image = document.getElementById('output');
+    var uploaded_image = document.getElementById('output');
     image.src = URL.createObjectURL(event.target.files[0]);
     };
 </script>   
   
-  <img src=image alt="image">
+  <img src="uploaded_image" alt="image">
   <script src="/image-classifier/sketch.js"></script>
 </body>
 
