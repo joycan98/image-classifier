@@ -6,13 +6,12 @@ let img;
 
 function preload() {
   classifier = ml5.imageClassifier('MobileNet');
-  img = loadImage('images/bird.png');
+  img = loadImage('/image-classifier/images/bird.png');
 }
 
 function setup() {
   createCanvas(400, 400);
   classifier.classify(img, gotResult);
-  image(img, 0, 0);
 }
 
 // A function to run when we get any errors and the results
