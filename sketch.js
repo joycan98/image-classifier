@@ -6,7 +6,8 @@ let img;
 
 function preload() {
   classifier = ml5.imageClassifier('MobileNet');
-  img = loadImage('/image-classifier/images/bird.png');
+  var image = document.getElementById('output');
+  img = loadImage(image.src);
 }
 
 function setup() {
@@ -22,7 +23,9 @@ function gotResult(error, results) {
   } else {
     // The results are in an array ordered by confidence.
     console.log(results);
-    createDiv(`Label: ${results[0].label}`);
-    createDiv(`Confidence: ${nf(results[0].confidence, 0, 2)}`);
+    // createDiv(`Label: ${results[0].label}`);
+    // createDiv(`Confidence: ${nf(results[0].confidence, 0, 2)}`);
+    document.getElementById("results").innerHTML = 'Label: '+ results[0].label
+    document.getElementById("confidence").innerHTML = 'Confidence: ' +  nf(results[0].confidence, 0, 2)
   }
 }
